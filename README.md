@@ -13,7 +13,6 @@ A robust text analysis application leveraging OpenAI's capabilities through Temp
 - **Technical Features**
   - Durable execution with Temporal workflows
   - Signal-based workflow control
-  - Prometheus metrics integration
   - Responsive web interface
   - RESTful API endpoints
 
@@ -25,7 +24,6 @@ The application consists of several key components:
 - **Backend**: Express.js server
 - **Workflow Engine**: Temporal
 - **AI Processing**: OpenAI API
-- **Monitoring**: Prometheus & OpenTelemetry
 
 ### System Architecture Diagram
 ```
@@ -47,13 +45,12 @@ The application consists of several key components:
 - Node.js (v16+)
 - Temporal server running locally or accessible
 - OpenAI API key
-- Docker (optional, for metrics)
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ai-text-analysis.git
+git clone https://github.com/garimaggupta/AITextAnalysis.git
 cd ai-text-analysis
 ```
 
@@ -112,53 +109,7 @@ Cancel Analysis:
 curl -X POST http://localhost:3000/api/cancel/{workflowId}
 ```
 
-## 📊 Metrics and Monitoring
 
-The application exposes metrics at `/metrics` endpoint for Prometheus scraping. Available metrics include:
-
-- Workflow execution counts and duration
-- Activity performance metrics
-- Task queue monitoring
-- API latency and error rates
-
-### Setting up Monitoring
-
-1. Start Prometheus:
-```bash
-docker-compose up -d prometheus
-```
-
-2. Access Grafana dashboard:
-```
-http://localhost:3000/grafana
-```
-
-## 🧪 Testing
-
-Run the test suite:
-```bash
-npm test
-```
-
-Run integration tests:
-```bash
-npm run test:integration
-```
-
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── activities/       # Temporal activities
-│   ├── workflows/        # Temporal workflows
-│   ├── client/          # Frontend application
-│   ├── server/          # Express server
-│   ├── metrics/         # Metrics collection
-│   └── types/           # TypeScript type definitions
-├── public/              # Static assets
-├── tests/               # Test files
-└── docker/              # Docker configurations
-```
 
 ## 🛠️ Development
 
@@ -197,13 +148,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Temporal Team for the workflow engine
 - OpenAI for the AI capabilities
 - Contributors and maintainers
-
-## 📞 Support
-
-For support, please:
-1. Check existing issues
-2. Create a new issue
-3. Join our Discord community
 
 ---
 Made with ❤️ by Garima
